@@ -1,4 +1,4 @@
-import { Component, ElementRef, AfterViewInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, AfterViewInit, ViewChild, HostListener } from '@angular/core';
 import { AppService } from './services/app.service';
 import { GameService } from './services/game.service';
 
@@ -12,6 +12,14 @@ export class AppComponent implements AfterViewInit {
 @ViewChild('canvas') public canvas: ElementRef;
 subscription: any;
 showLoader = true;
+
+@HostListener('document:keydown', ['$event']) onKeydownHandler(event: KeyboardEvent) {
+  this.appService.movePlayer(event, 'keydown');
+  }
+
+  @HostListener('document:keyup', ['$event']) onKeyupHandler(event: KeyboardEvent) {
+  this.appService.movePlayer(event, 'keyup');
+  }
 
 constructor(
 private appService: AppService,

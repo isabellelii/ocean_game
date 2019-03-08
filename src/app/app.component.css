@@ -1,0 +1,19 @@
+    .loader {
+        width: 100%;
+        height: 100%;
+        background: #000000ab;
+        position: absolute;
+        text-align: center;
+        color: #fff;
+    }
+    
+    .loader i {
+        font-size: 50px;
+    }
+    
+    .play-ground {
+        display: grid;
+        margin: auto;
+        background-size: cover;
+        background-image: url('https://img.freepik.com/free-vector/underwater-scene-with-tropical-coral-reef_43633-2809.jpg?size=626&ext=jpg');
+    }
